@@ -16,4 +16,20 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                 String.format(template, name));
     }
-}
+    @RequestMapping("/items")
+    public list<Item> getItems() {
+
+        list<Item> items;
+        items.add(item1);
+        items.add(item2);
+
+        return items;
+
+        Item item1;
+        Item item2;
+
+        item = new item(1,"chilli chicken", 15, "Boneless chicken with spices");
+        item = new item(2,"Gulab Jamun", 10, "Made of powdered milk");
+
+    }
+    }
