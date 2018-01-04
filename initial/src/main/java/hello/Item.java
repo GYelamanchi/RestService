@@ -2,12 +2,12 @@ package hello;
 public class Item{
 
     private final long id;
-    private final string name;
+    private final String name;
     private final long price;
-    private final string description;
+    private final String description;
 
 
-    public Item(long id, String name, long price, string description) {
+    public Item(long id, String name, long price, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -24,7 +24,7 @@ public class Item{
     public long getPrice(){
         return price;
     }
-    public string getDescription(){
+    public String getDescription(){
         return description;
     }
 }
