@@ -29,4 +29,8 @@ public class GreetingController {
 
         return itemRepository.findAll();
     }
+    
+    public Item getItemByName(@RequestParam(value="name") String name){
+        return itemRepository.findByName("Gulab Jamun");
+    }
     }
