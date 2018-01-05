@@ -30,7 +30,7 @@ public class GreetingController {
         return itemRepository.findAll();
     }
     @RequestMapping("/items")
-    public Item getItemByName(@RequestParam(value="name") String name){
+    public Item getItems(@RequestParam(value="name") String name){
         return itemRepository.findByName("Gulab Jamun");
     }
     }
