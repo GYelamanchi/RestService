@@ -29,8 +29,13 @@ public class GreetingController {
 
         return itemRepository.findAll();
     }
-    @RequestMapping("/items")
-    public Item getItems(@RequestParam(value="name") String name){
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping("/item")
+    public Item getItem(@RequestParam(value="name") String name){
         return itemRepository.findByName("Gulab Jamun");
+    }
+    @RequestMapping("/item1")
+    public void deleteById(){
+        itemRepository.delete("2");
     }
     }
