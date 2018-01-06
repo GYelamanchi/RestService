@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -34,8 +32,11 @@ public class GreetingController {
     public Item getItem(@RequestParam(value="name") String name){
         return itemRepository.findByName("Gulab Jamun");
     }
-    @RequestMapping("/item1")
-    public void deleteById(){
-        itemRepository.delete("2");
+
+    @RequestMapping(value = "/item/{name}", method = RequestMethod.DELETE)
+    public void deleteItem(@PathVariable String name) {
+        itemRepository.deleteByName(name);
     }
+    
+
     }
