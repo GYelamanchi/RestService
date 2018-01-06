@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,6 +38,10 @@ public class GreetingController {
     public void deleteItem(@PathVariable String name) {
         itemRepository.deleteByName(name);
     }
-    
+
+    @RequestMapping(value = "/item", method = RequestMethod.POST)
+    public void create(@RequestBody Item item) {
+        itemRepository.save(item);
+    }
 
     }
