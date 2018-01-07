@@ -5,11 +5,12 @@ import org.springframework.data.annotation.Id;
 public class Item{
 
     @Id
-    private final String id;
-    private final String name;
-    private final long price;
-    private final String description;
+    private String id;
+    private String name;
+    private long price;
+    private String description;
 
+    public Item(){}
 
 
     public Item(String id, String name, long price, String description) {
