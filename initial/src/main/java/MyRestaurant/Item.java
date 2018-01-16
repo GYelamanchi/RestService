@@ -1,4 +1,4 @@
-package hello;
+package MyRestaurant;
 
 import org.springframework.data.annotation.Id;
 
