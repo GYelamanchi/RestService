@@ -3,6 +3,8 @@ package MyRestaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class OrderService {
 
@@ -24,5 +26,8 @@ public class OrderService {
     public Order getOrder(String orderId) {
         Order order = orderRepository.findOne(orderId);
         return order;
+    }
+    public List<Order> getOrders() {
+        return orderRepository.findAll();
     }
 }
